@@ -15,7 +15,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rf docs && mv build docs",
+    "build": "pnpm run build:linux",
+    "build:linux": "react-scripts build && rm -rf docs && mv build docs",
+    "build:windows": "react-scripts build && rmdir /s /q docs && move build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
